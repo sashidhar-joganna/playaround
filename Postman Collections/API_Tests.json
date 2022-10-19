@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "9b3bb2c1-c1e4-4503-a9ac-ba794acb2ed6",
+		"name": "API Test Pet Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Pet Object to Store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ffb1bcd1-569e-4b08-b855-2d81a7098ff4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Skippy\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Tag1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9542f0a5-c31a-42b2-9324-7cc103397bb9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1111,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"string\"\n  },\n  \"name\": \"Skippy\",\n  \"photoUrls\": [\n    \"/image/image1.png\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"Tag1\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pet Object to Store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de54a8cc-6816-49ab-b84d-6855dca980be",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SnoopyNew\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TagUpdated1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a54645d8-be7c-4d74-b094-9024abf758b8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1111,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"string\"\n  },\n  \"name\": \"SnoopyNew\",\n  \"photoUrls\": [\n    \"/image/imageUpdated1.png\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"TagUpdated1\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Find Pet by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77a47213-b261-41e5-b882-d956e2d19c29",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SnoopyNew\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TagUpdated1\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"available\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bc10dfcf-b434-4362-8fe3-9ad786d2158c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/pet/1111"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pet by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccec053d-011e-4b89-96b6-dbd2591df3c6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"1111\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a1467588-9a77-49ae-a9a9-e988c2457a0e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/pet/1111"
+			},
+			"response": []
+		}
+	]
+}
