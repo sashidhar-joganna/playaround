@@ -106,7 +106,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "No Pet Found by ID",
 			"id": "5535a2a3-54b5-4080-b736-a2d1a972058e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
