@@ -51,6 +51,28 @@
 		},
 		{
 			"name": "Update Pet Object to Store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de54a8cc-6816-49ab-b84d-6855dca980be",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"SnoopyNew\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TagUpdated1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "a54645d8-be7c-4d74-b094-9024abf758b8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -60,7 +82,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"id\": 1111,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"string\"\n  },\n  \"name\": \"SkippyUpdated\",\n  \"photoUrls\": [\n    \"/image/image1.png\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"Tag1\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+					"raw": "{\n  \"id\": 1111,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"string\"\n  },\n  \"name\": \"SnoopyNew\",\n  \"photoUrls\": [\n    \"/image/imageUpdated1.png\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"TagUpdated1\"\n    }\n  ],\n  \"status\": \"available\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
