@@ -29,7 +29,7 @@
 					}
 				}
 			],
-			"_postman_id": "9542f0a5-c31a-42b2-9324-7cc103397bb9",
+			"id": "9542f0a5-c31a-42b2-9324-7cc103397bb9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -46,6 +46,18 @@
 					}
 				},
 				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "a54645d8-be7c-4d74-b094-9024abf758b8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
