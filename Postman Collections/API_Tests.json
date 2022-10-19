@@ -50,7 +50,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Update Pet Object to Store",
 			"id": "a54645d8-be7c-4d74-b094-9024abf758b8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
