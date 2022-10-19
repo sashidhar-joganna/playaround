@@ -18,5 +18,8 @@
     },
     "scripts": {
         "wdio": "wdio run test/wdio.conf.ts"
+    },
+    "dependencies": {
+        "wdio-tesults-service": "^1.1.2"
     }
 }

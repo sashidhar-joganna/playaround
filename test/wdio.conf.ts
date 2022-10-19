@@ -79,7 +79,7 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -139,8 +139,15 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
-    
+    services: ['chromedriver',
+        ['tesults',
+            {
+                target: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImIzMTNmMGNhLWMwN2UtNDRmMS04YzllLWZkMWFhZTliNDA3ZS0xNjY2MjE4NTY0MzIwIiwiZXhwIjo0MTAyNDQ0ODAwMDAwLCJ2ZXIiOiIwIiwic2VzIjoiMzdmY2MzOTAtMDM1OC00ODdlLWE5ZDUtN2FkYzZhYmM4MDhjIiwidHlwZSI6InQifQ.PZKj8zQkSSInvt2ZIas-gBPdi2-jgAJtxlpXt3yItgQ'
+            }
+        ]
+
+    ],
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -164,7 +171,7 @@ export const config: Options.Testrunner = {
     reporters: ['spec'],
 
 
-    
+
     //
     // Options to be passed to Jasmine.
     jasmineOpts: {
@@ -174,11 +181,11 @@ export const config: Options.Testrunner = {
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
         // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
+        expectationResultHandler: function (passed, assertion) {
             // do something
         }
     },
-    
+
     //
     // =====
     // Hooks
