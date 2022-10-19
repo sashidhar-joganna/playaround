@@ -92,6 +92,18 @@
 				"url": "https://petstore.swagger.io/v2/pet"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "bc10dfcf-b434-4362-8fe3-9ad786d2158c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
