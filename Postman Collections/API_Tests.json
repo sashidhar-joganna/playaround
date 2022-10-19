@@ -133,7 +133,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Delete Pet by ID",
 			"id": "a1467588-9a77-49ae-a9a9-e988c2457a0e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
