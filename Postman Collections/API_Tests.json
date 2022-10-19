@@ -56,8 +56,18 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1111,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"string\"\n  },\n  \"name\": \"SkippyUpdated\",\n  \"photoUrls\": [\n    \"/image/image1.png\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"Tag1\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
 			},
 			"response": []
 		}
