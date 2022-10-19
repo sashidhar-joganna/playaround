@@ -131,6 +131,18 @@
 				"url": "https://petstore.swagger.io/v2/pet/1111"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "a1467588-9a77-49ae-a9a9-e988c2457a0e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
