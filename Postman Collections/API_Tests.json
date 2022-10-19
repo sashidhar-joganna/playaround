@@ -134,13 +134,32 @@
 		},
 		{
 			"name": "Delete Pet by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccec053d-011e-4b89-96b6-dbd2591df3c6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"1111\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "a1467588-9a77-49ae-a9a9-e988c2457a0e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/pet/1111"
 			},
 			"response": []
 		}
