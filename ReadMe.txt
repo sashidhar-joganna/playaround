@@ -25,5 +25,9 @@ The API tests can be run using the following command locally
 
 The setting of a CICD pipeline for running the tests using Jenkins is still pending as it ran into exceptions. Further investigation needs to be performed
 
+Next step is to enhance the folder structure for registering the locators and add more scenarios to validate the ui elements and also more scenarios to test the API tests. This project is more of a purpose to show
+the capabilities of automating UI flows and API tests.
+
+
 
 
