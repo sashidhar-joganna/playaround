@@ -18,7 +18,7 @@
     },
     "scripts": {
         "wdio": "wdio run test/wdio.conf.ts",
-        "test:api": "newman run \"./Postman Collections/API_Tests.json\""
+        "apitest": "newman run \"./Postman Collections/API_Tests.json\""
     },
     "dependencies": {
         "newman": "^5.3.2",
