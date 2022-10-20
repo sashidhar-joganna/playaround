@@ -17,9 +17,11 @@
         "wdio-chromedriver-service": "^8.0.0"
     },
     "scripts": {
-        "wdio": "wdio run test/wdio.conf.ts"
+        "wdio": "wdio run test/wdio.conf.ts",
+        "test:api": "newman run \"./Postman Collections/API_Tests.json\""
     },
     "dependencies": {
+        "newman": "^5.3.2",
         "wdio-tesults-service": "^1.1.2"
     }
 }
