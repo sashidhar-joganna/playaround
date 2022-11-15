@@ -10,4 +10,8 @@ export default class Page {
     public open () {
         return browser.url(`http://www.uitestingplayground.com/`)
     }
+
+    get title(){
+        return browser.$('[id="title"]');
+    }
 }

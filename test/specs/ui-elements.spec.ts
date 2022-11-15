@@ -3,63 +3,48 @@ import { DynamicIdSelection } from "../../dynamic-id";
 import { AjaxRequestResponseCheck } from "../../ajax-data";
 import { HidingButtonCheck } from "../../scrollbar-check";
 
+describe("UI Tests for playing around", () => {
+  const page = new Page();
+  beforeAll(async () => {
+    await page.open();
+    await page.title.isDisplayed();
+  });
 
-describe('Navigate to page dynamic id page ', () => {
-
+  describe("Navigate to page where dynamic id is located", () => {
     beforeAll(async () => {
-        await browser.navigateTo('http://www.uitestingplayground.com/dynamicid');
-    })
-    it('check the dynamic id button', async () => {
+      await browser.url("dynamicid");
+    });
+    it("check the dynamic id button", async () => {
+      const component = new DynamicIdSelection();
 
-        const component = new DynamicIdSelection()
+      const dynamicButton = await component.dynamicIdButton;
+      await dynamicButton.waitForDisplayed();
+      await dynamicButton.scrollIntoView();
+      await dynamicButton.click();
+      await expect(dynamicButton).toHaveTextContaining(
+        "Button with Dynamic ID"
+      );
+    });
+  });
 
-        const dynamicButton = await component.dynamicIdButton;
-        await dynamicButton.waitForDisplayed();
-        await dynamicButton.scrollIntoView();
-        await dynamicButton.click();
-        expect(dynamicButton.getAttribute('class')).toHaveText('btn btn-primary');
-
-    })
-});
-describe('Navigate to AJAX data page ', () => {
-
+  describe("Navigate to page where ajax request button is located", () => {
     beforeAll(async () => {
-        await browser.navigateTo('http://www.uitestingplayground.com/ajax');
-    })
-    it('check the dynamic id button', async () => {
+      await browser.url("ajax");
+    });
+    it("check the ajax button response", async () => {
+      const component = new AjaxRequestResponseCheck();
 
-        const component = new AjaxRequestResponseCheck()
+      const triggerButton = await component.ajaxTriggerButton;
+      await triggerButton.waitForDisplayed();
+      await triggerButton.scrollIntoView();
+      await triggerButton.click();
 
-        const triggerButton = await component.ajaxTriggerButton;
-        await triggerButton.waitForDisplayed();
-        await triggerButton.scrollIntoView();
-        await triggerButton.click();
-
-        const responseCheck = await component.ajaxButtonClickResponse;
-        await responseCheck.waitForExist();
-        await responseCheck.scrollIntoView();
-        await expect(responseCheck).toHaveTextContaining('Data loaded with AJAX get request');
-
-
-    })
-});
-
-describe('Navigate hiding button page ', () => {
-
-    beforeAll(async () => {
-        await browser.navigateTo('http://www.uitestingplayground.com/scrollbars');
-    })
-    afterAll(async()=>{
-        console.log('3 Test Scenarios have been successfully executed');
-    })
-    it('scroll and click on hiding button', async () => {
-
-        const component = new HidingButtonCheck()
-
-        const scrollToHidingButton = await component.hidingButton;
-        await scrollToHidingButton.waitForDisplayed();
-        await scrollToHidingButton.scrollIntoView();
-        await scrollToHidingButton.click();
-
-    })
+      const responseCheck = await component.ajaxButtonClickResponse;
+      await responseCheck.waitForExist();
+      await responseCheck.scrollIntoView();
+      await expect(responseCheck).toHaveTextContaining(
+        "Data loaded with AJAX get request"
+      );
+    });
+  });
 });
